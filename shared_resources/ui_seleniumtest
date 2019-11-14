@@ -1,0 +1,16 @@
+#!/bin/groovy
+
+root_folder = <automation root folder>
+
+timestamps {
+	node ( any ) {
+
+		stage('checkout') {
+			checkout scm
+		}
+
+		stage ('run selenium tests') {
+			bat """$root_folder/executables/google_Search.bat"""
+		}
+	}
+}
